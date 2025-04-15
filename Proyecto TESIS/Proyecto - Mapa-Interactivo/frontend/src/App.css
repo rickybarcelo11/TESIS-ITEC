@@ -1,0 +1,64 @@
+/* Aseguramos que html, body y #root ocupen el 100% de la altura */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Contenedor principal usando CSS Grid para el dashboard */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 240px 1fr 300px; /* Sidebar izquierdo, contenido y sidebar derecho */
+  grid-template-rows: 60px auto;           /* Header fijo y contenido restante */
+  grid-template-areas:
+    "header header header"
+    "sidebar-left main sidebar-right";
+  height: 100vh;
+}
+
+/* Estilos para el Header */
+.dashboard-header {
+  grid-area: header;
+  background-color: #282c34;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Estilos para el Sidebar Izquierdo */
+.sidebar-left {
+  grid-area: sidebar-left;
+  background-color: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+}
+
+/* Estilos para el Contenido Principal (donde se carga el mapa) */
+.main-content {
+  grid-area: main;
+  position: relative;
+  padding: 20px;
+}
+
+/* Estilos para el Sidebar Derecho (información detallada) */
+.sidebar-right {
+  grid-area: sidebar-right;
+  background-color: #fafafa;
+  border-left: 1px solid #e5e7eb;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Ejemplo de estilos para la navegación en el header */
+.dashboard-header nav button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Puedes agregar más estilos o variables para tipografía y colores según convenga */
